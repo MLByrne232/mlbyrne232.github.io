@@ -1,0 +1,232 @@
+/* The colour palette */
+:root {
+	--taupe: #463f3aff;
+	--grey-olive: #8a817cff;
+	--silver: #bcb8b1ff;
+	--parchment: #f4f3eeff;
+	--powder-blush: #e0afa0ff;
+	--active-colour: #7c8a81;
+	--link-colour: #234f39;
+}
+
+body {
+	background-color: var(--parchment);
+	color: var(--taupe);
+	width: 70%;
+	border: solid;
+	border-color: var(--taupe);
+	padding: 2em;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2em;
+	font-family: Perpetua, Optima, serif;
+}
+
+/* gemini made this bit */
+html {
+	background-image: url("Images/background.png");
+	background-attachment: fixed;
+	background-size: cover;      /* Optional: scales the image to fill the screen */
+	background-position: center; /* Optional: keeps the image centered */
+}
+
+h1 {
+	margin: 0.1em;
+	padding: 1em;
+	border-color: var(--grey-olive);
+	border-style: none none solid none;
+	display:block;
+	background-color: var(--parchment); 
+	width: 70%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 2em;
+}
+
+img {
+	border: solid;
+	border-spacing: 2px;
+	border-color: var(--grey-olive);
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+section {
+	border-width: 1px;
+	border-color: var(--grey-olive);
+	border-style: solid none none none;
+	margin-top: 1em;
+	padding-left: 2em;
+	padding-right: 2em;
+	padding-top: 2em;
+	padding-bottom: 0.5em;
+	background-color: var(--parchment);
+}
+
+footer {
+	display: block;
+	text-align: center;
+	font-style: italic;
+}
+
+
+main section {
+	padding-left: 5em;
+	padding-right: 5em;
+	padding-bottom: 2em;
+}
+
+main h1 {
+	width: 40%;
+}
+
+header h1{
+	margin-bottom: 0em;
+}
+
+span {
+	padding: 5em;
+	padding-top: 2em;
+	text-align: left;
+}
+
+td {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+nav {
+	width: 74%;
+	display: block;
+	margin-left:auto;
+	margin-right: auto;
+	margin-top: 0;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flow-root;
+	background-color: var(--grey-olive);
+}
+
+nav ul li {
+	float: left;
+	display: block;
+	position: relative;
+	color: var(--parchment);
+	text-align: center;
+	padding: 1em 1em;
+	text-decoration: none;
+}
+
+nav ul li:hover {
+	background-color: var(--silver);
+}
+
+nav ul li a {
+	color: var(--parchment);
+	font-weight:  normal;
+}
+
+body a:link, a:visited, a:active { 
+	color: var(--link-colour);
+	text-decoration: none;
+	font-weight: bold;
+}
+
+body a:hover {
+	color: var(--silver);
+	text-decoration: underline;
+}
+
+/* --- Added for Dropdowns --- */
+nav ul li ul {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	min-width: 100%;
+	background-color: var(--grey-olive);
+	z-index: 100;
+}
+
+nav ul li ul li {
+	float: none;
+	white-space: nowrap;
+	text-align: left;
+}
+
+nav ul li:hover > ul,
+nav ul li:focus-within > ul {
+	display: block;
+}
+
+
+
+/* now some custom classes */
+.subtitle {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	text-align: center;
+	border-style: none;
+	margin-top: 2em;
+	margin-bottom:0em;
+	padding-bottom:2em;
+	width: 74%;
+	border-color: var(--grey-olive);
+}
+
+.with-text {
+	display: flex;
+}
+
+.active {
+	background-color: var(--active-colour);
+}
+
+.no-border {
+	border: none;
+	border-width: 0px;
+}
+
+/* gemini did all of these following classes */
+.collapsible > :first-child {
+	cursor: pointer;
+	user-select: none;
+}
+
+.collapsible > :first-child::before {
+	content: "▾  ";
+	font-size: 0.75em;
+	color: var(--grey-olive);
+}
+
+.collapsible.collapsed > :first-child::before {
+	content: "▸  ";
+	font-size: 0.75em;
+}
+
+.collapsible.collapsed > :not(:first-child) {
+	display: none;
+}
+
+/* Prevent your global `span { padding: 5em; }` rule from breaking MathJax */
+mjx-container,
+mjx-container *,
+.MathJax,
+.MathJax *,
+.mjx-chtml,
+.mjx-chtml *,
+.MathJax_Display,
+.MathJax_Display *,
+.MathJax_Preview,
+.MathJax_Preview * {
+	padding: 0;
+}
