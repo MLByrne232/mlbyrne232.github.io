@@ -121,6 +121,7 @@ nav ul li {
 	position: relative;
 	color: var(--parchment);
 	text-align: center;
+	font-weight: bold;
 	padding: 1em 1em;
 	text-decoration: none;
 }
