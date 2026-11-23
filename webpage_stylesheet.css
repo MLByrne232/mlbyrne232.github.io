@@ -159,6 +159,11 @@ header a:hover {
 	text-decoration: underline;
 }
 
+footer a:link, a:visited, a:active { 
+	color: var(--link-colour);
+	text-decoration: none;
+	font-weight: bold;
+}
 
 /* --- Added for Dropdowns --- */
 nav ul li ul {
