@@ -45,11 +45,16 @@
 		<nav>
 			<ul>
 				<a href="index.html"><li class="active">Home</li></a>
-				<li>Seminars
+				<a href="index.html#notes"><li>Notes</li></a>
+				<a href="index.html#talks"><li>Talks</li></a>
+				<a href="index.html#teaching"><li>Teaching</li></a>
+				<li><a href="index.html#seminars">Seminars</a>
 					<ul>
 						<a href="efg.html"><li>Étale fundamental groups</li></a>
 					</ul>
 				</li>
+				<a href="index.html#conferences"><li>Conferences</li></a>
+				<a href="index.html#contact"><li>Contact</li></a>
 			</ul>
 		</nav>
 	</header>
@@ -90,7 +95,7 @@
 			</div>
 		</section>
 
-		<section class="collapsible">
+		<section id="notes" class="collapsible">
 			<h1>
 				Notes
 			</h1>
@@ -107,7 +112,7 @@
 			</ul>
 		</section>
 
-		<section class="collapsible">
+		<section id="talks" class="collapsible">
 			<h1>Talks &amp; poster presentations</h1>
 
 			<table>
@@ -129,7 +134,7 @@
 			</p>
 		</section>
 
-		<section class="collapsible">
+		<section id="teaching" class="collapsible">
 			<h1>Teaching</h1>
 			<table>
 				<tr>
@@ -140,7 +145,7 @@
 			</table>
 		</section>
 
-		<section class="collapsible">
+		<section id="seminars" class="collapsible">
 			<h1>Seminars organised</h1>
 			<table>
 				<tr>
@@ -151,7 +156,7 @@
 			</table>
 		</section>
 
-		<section class="collapsible">
+		<section id="conferences" class="collapsible">
 			<h1>Conferences attended</h1>
 			<table>
 				<tr>
@@ -176,7 +181,7 @@
 				</tr>
 			</table>
 		</section>
-		<section class="collapsible">
+		<section id="contact" class="collapsible">
 			<h1>Contact Details</h1>
 			<p>
 				If you need to reach me in person, my office is J14a in the Hicks Building, S3 7RH. My emails are:
@@ -205,24 +210,53 @@
 	<script src="blah.js"></script> <!-- david's automatic "last updated" synchronisation -->
 	<!-- some custom JS to make collapsible sections, courtesy of Gemini -->
 	<script>
+		// 1. Collapse all collapsible sections on load and set up click toggles
 		document.querySelectorAll('.collapsible').forEach(section => {
-			// 1. Collapse all collapsible sections by default on page load
-			section.classList.add('collapsed');
-
-			// 2. Toggle open/closed when clicking the heading (:first-child)
-			section.firstElementChild.addEventListener('click', () => {
+		section.classList.add('collapsed');
+		section.firstElementChild.addEventListener('click', () => {
 			section.classList.toggle('collapsed');
-
-			// 3. Re-render MathJax inside the section once it becomes visible
-			if (!section.classList.contains('collapsed') && window.MathJax) {
-				if (MathJax.typesetPromise) {
-				MathJax.typesetPromise([section]); // MathJax v3
-				} else if (MathJax.Hub) {
-				MathJax.Hub.Queue(["Typeset", MathJax.Hub, section]); // MathJax v2
-				}
-			}
-			});
 		});
+		});
+
+		// 2. Expand the target section whenever an #id link is navigated to
+		function openTargetSection(hash, shouldScroll = false) {
+		if (!hash || hash.length < 2) return;
+		const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+		if (!target) return;
+
+		const section = target.closest('.collapsible');
+		if (section) {
+			section.classList.remove('collapsed');
+		}
+		if (shouldScroll) {
+			target.scrollIntoView();
+		}
+		}
+
+		// Run on initial page load (in case the URL already contains #id-name)
+		openTargetSection(window.location.hash, true);
+
+		// Run whenever an in-page #id-name link is clicked
+		document.querySelectorAll('a[href^="#"]').forEach(link => {
+		link.addEventListener('click', () => {
+			openTargetSection(link.getAttribute('href'));
+		});
+		});
+
+		// Run when navigating with browser Back/Forward buttons
+		window.addEventListener('hashchange', () => {
+		openTargetSection(window.location.hash);
+		});
+	</script>
+
+	<!-- again, Gemini's touch to make the background scroll slower -->
+	<script>
+		const html = document.documentElement;
+		const scrollSpeed = 0.1; // 0 = completely fixed, 1 = normal scroll speed
+
+		window.addEventListener('scroll', () => {
+			html.style.backgroundPositionY = `calc(50% - ${window.scrollY * scrollSpeed}px)`;
+		}, { passive: true });
 	</script>
 </body>
 </html>

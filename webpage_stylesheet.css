@@ -105,6 +105,7 @@ nav {
 	margin-left:auto;
 	margin-right: auto;
 	margin-top: 0;
+	font-family: 'Courier New', Courier, monospace;
 }
 
 nav ul {
@@ -135,6 +136,7 @@ nav ul li a {
 	font-weight:  normal;
 }
 
+
 body a:link, a:visited, a:active { 
 	color: var(--link-colour);
 	text-decoration: none;
@@ -145,6 +147,18 @@ body a:hover {
 	color: var(--silver);
 	text-decoration: underline;
 }
+
+header a:link, a:visited, a:active { 
+	color: var(--parchment);
+	text-decoration: none;
+	font-weight: bold;
+}
+
+header a:hover {
+	color: var(--parchment);
+	text-decoration: underline;
+}
+
 
 /* --- Added for Dropdowns --- */
 nav ul li ul {
