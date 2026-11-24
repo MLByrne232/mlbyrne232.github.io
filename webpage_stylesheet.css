@@ -113,26 +113,28 @@ td {
 	padding-right: 1em;
 }
 
-/* link formatting in body */
-body a:link, a:visited, a:active { 
+/* link formatting in body-main */
+body main a:link, a:visited, a:active { 
 	color: var(--link-colour);
 	text-decoration: none;
 	font-weight: bold;
 }
 
-body a:hover {
+body main a:hover {
 	color: var(--silver);
 	text-decoration: underline;
 }
 
-main a:link, a:visited, a:active { 
-	color: var(--link-colour);
+
+/* link formatting in body-header */
+body header a:link, a:visited, a:active { 
+	color: var(--parchment);
 	text-decoration: none;
 	font-weight: bold;
 }
 
-main a:hover {
-	color: var(--silver);
+body header a:hover {
+	color: var(--parchment);
 	text-decoration: underline;
 }
 
@@ -179,15 +181,16 @@ nav ul li a {
 }
 
 
-/* link formatting in header/footer */
-header a:link, a:visited, a:active { 
-	color: var(--parchment);
+
+/* link formatting in body-footer */
+body footer a:link, a:visited, a:active { 
+	color: var(--link-colour);
 	text-decoration: none;
 	font-weight: bold;
 }
 
-header a:hover {
-	color: var(--parchment);
+body footer a:hover {
+	color: var(--silver);
 	text-decoration: underline;
 }
 
