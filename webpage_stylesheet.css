@@ -113,6 +113,19 @@ td {
 	padding-right: 1em;
 }
 
+/* link formatting in body */
+body a:link, a:visited, a:active { 
+	color: var(--link-colour);
+	text-decoration: none;
+	font-weight: bold;
+}
+
+body a:hover {
+	color: var(--silver);
+	text-decoration: underline;
+}
+
+/* navigation bar formatting */
 nav {
 	width: 74%;
 	display: block;
@@ -144,23 +157,18 @@ nav ul li:hover {
 	background-color: var(--silver);
 }
 
+nav a:link, a:visited, a:active {
+	color: var(--parchment);
+	font-weight: normal;
+}
+
 nav ul li a {
 	color: var(--parchment);
 	font-weight:  normal;
 }
 
 
-body a:link, a:visited, a:active { 
-	color: var(--link-colour);
-	text-decoration: none;
-	font-weight: bold;
-}
-
-body a:hover {
-	color: var(--silver);
-	text-decoration: underline;
-}
-
+/* link formatting in header/footer */
 header a:link, a:visited, a:active { 
 	color: var(--parchment);
 	text-decoration: none;
