@@ -125,6 +125,17 @@ body a:hover {
 	text-decoration: underline;
 }
 
+main a:link, a:visited, a:active { 
+	color: var(--link-colour);
+	text-decoration: none;
+	font-weight: bold;
+}
+
+main a:hover {
+	color: var(--silver);
+	text-decoration: underline;
+}
+
 /* navigation bar formatting */
 nav {
 	width: 74%;
