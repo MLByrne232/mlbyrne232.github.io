@@ -113,21 +113,10 @@ td {
 	padding-right: 1em;
 }
 
-/* link formatting in body-main */
-body main a:link, a:visited, a:active { 
-	color: var(--link-colour);
-	text-decoration: none;
-	font-weight: bold;
-}
-
-body main a:hover {
-	color: var(--silver);
-	text-decoration: underline;
-}
 
 
 /* link formatting in body-header */
-body header a:link, a:visited, a:active { 
+body header a:link, body header a:visited, body header a:active { 
 	color: var(--parchment);
 	text-decoration: none;
 	font-weight: bold;
@@ -135,6 +124,19 @@ body header a:link, a:visited, a:active {
 
 body header a:hover {
 	color: var(--parchment);
+	text-decoration: underline;
+}
+
+
+/* link formatting in body-main */
+body main a:link, body main a:visited, body main a:active { 
+	color: var(--link-colour);
+	text-decoration: none;
+	font-weight: bold;
+}
+
+body main a:hover {
+	color: var(--silver);
 	text-decoration: underline;
 }
 
@@ -170,7 +172,7 @@ nav ul li:hover {
 	background-color: var(--silver);
 }
 
-nav a:link, a:visited, a:active {
+nav a:link, nav a:visited, nav a:active {
 	color: var(--parchment);
 	font-weight: normal;
 }
@@ -183,7 +185,7 @@ nav ul li a {
 
 
 /* link formatting in body-footer */
-body footer a:link, a:visited, a:active { 
+body footer a:link, body footer a:visited, body footer a:active { 
 	color: var(--link-colour);
 	text-decoration: none;
 	font-weight: bold;
