@@ -2,34 +2,34 @@
 <html lang="en-gb">
 
 <head>
-  <title>Matt Byrne's Homepage</title>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="webpage_stylesheet.css">
-  <link rel="icon" type="image/vnd.microsoft.icon" href="Images/favicon.ico">
-  
-  <script type="text/javascript">
-	div_toggle = function(id) {
-	  var e = document.getElementById(id);
-	  if (e && e.style.display == 'none') {
-		e.style.display = 'block';
-	  }
-	  else {
-		e.style.display = 'none';
-	  }
-	}
-  </script>
+	<title>Matt Byrne's Homepage</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="webpage_stylesheet.css">
+	<link rel="icon" type="image/vnd.microsoft.icon" href="Images/favicon.ico">
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js" id="MathJax-script" async
-	integrity="sha384-AHAnt9ZhGeHIrydA1Kp1L7FN+2UosbF7RQg6C+9Is/a7kDpQ1684C2iH2VWil6r4" 
-	crossorigin="anonymous">
-  </script>
-  <script>
-	window.MathJax = {
-	  tex: {
-		inlineMath: [['$', '$'], ['\\(', '\\)']]
-	  }
-	};
-  </script>
+	<script type="text/javascript">
+	div_toggle = function(id) {
+		var e = document.getElementById(id);
+		if (e && e.style.display == 'none') {
+			e.style.display = 'block';
+		}
+		else {
+			e.style.display = 'none';
+		}
+	}
+	</script>
+
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js" id="MathJax-script" async
+		integrity="sha384-AHAnt9ZhGeHIrydA1Kp1L7FN+2UosbF7RQg6C+9Is/a7kDpQ1684C2iH2VWil6r4" 
+		crossorigin="anonymous">
+	</script>
+	<script>
+		window.MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			}
+		};
+	</script>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,6 +58,7 @@
 					</ul>
 				</li>
 				<a href="index.html#conferences"><li>Conferences</li></a>
+				<a href="blog.html"><li>Blog</li></a>
 				<a href="index.html#contact"><li>Contact</li></a>
 			</ul>
 		</nav>
@@ -207,12 +208,12 @@
 	</main>
 
 	<footer>
+		<!-- david's automatic "last updated" synchronisation -->
+		<script src="blah.js"></script>
 		<p>Background generated using <a href="https://github.com/isohedral/hatviz">hatviz</a></p>
 	</footer>
 
 
-	<!-- david's automatic "last updated" synchronisation -->
-	<script src="blah.js"></script>
 
 	<!-- some custom JS to make collapsible sections, courtesy of Gemini -->
 	<script>

@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html lang="en-gb">
+
+	<head>
+		<title>Matt Byrne's Blog</title>
+		<meta charset="UTF-8">
+		<!-- styling with icon + css -->
+		<link rel="stylesheet" type="text/css" href="webpage_stylesheet.css">
+		<link rel="icon" type="image/vnd.microsoft.icon" href="Images/favicon.ico">
+
+		<!-- include MathJax -->
+		<script type="text/javascript">
+			div_toggle = function(id) {
+				var e = document.getElementById(id);
+				if (e && e.style.display == 'none') {
+					e.style.display = 'block';
+				}
+				else {
+					e.style.display = 'none';
+				}
+			}
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js" id="MathJax-script" async
+			integrity="sha384-AHAnt9ZhGeHIrydA1Kp1L7FN+2UosbF7RQg6C+9Is/a7kDpQ1684C2iH2VWil6r4" 
+			crossorigin="anonymous">
+		</script>
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['$', '$'], ['\\(', '\\)']],
+					displayMath: [['\\[', '\\]']]
+				}
+			};
+		</script>
+
+		<!-- literally just for the font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+	</head>
+
+
+	<body>
+		<header> <!-- header starts here -->
+			<!-- start of the page-->
+			<h1>Matthew Luke Byrne</h1>
+			<h2 class="subtitle">
+				<em> &emsp; Number theory PhD student &emsp; • &emsp; he/him &emsp; </em>
+			</h2>
+
+			<!-- navigation bar -->
+			<nav>
+				<ul>
+					<a href="index.html"><li>Home</li></a>
+					<a href="index.html#notes"><li>Notes</li></a>
+					<a href="index.html#talks"><li>Talks</li></a>
+					<a href="index.html#teaching"><li>Teaching</li></a>
+					<li><a href="index.html#seminars">Seminars</a>
+						<ul>
+							<a href="efg.html"><li>Étale fundamental groups</li></a>
+						</ul>
+					</li>
+					<a href="index.html#conferences"><li>Conferences</li></a>
+					<a href="blog.html"><li class="active">Blog</li></a>
+					<a href="index.html#contact"><li>Contact</li></a>
+				</ul>
+			</nav>
+			<p class="padded">
+				This is just a collection of things I find interesting/fun but not interesting/fun enough to have write notes on. I hope you too find them interesting/fun. <em>All opinions expressed are those of the author, solely.</em>
+			</p>
+		</header>
+		<main> <!-- main body starts here-->
+			<p class="padded">
+				Links: <a href="blog.html#post0000">Newest</a> <a href="blog.html#post0000">Oldest</a>
+			</p>
+			<section id="post0000">
+				<small>&#9836; &ensp; <em>Listening to <a href="https://www.youtube.com/watch?v=81chcuuok-4" target="_blank">Ocean Bed &ndash; King Krule</a></em></small>
+				<h2>Why GMA deformations?</h2> <small>#0000, <em>13:50, 27/11/26</em></small> <br>
+
+				
+				<p>
+					Galois deformations are fun. If I give you a representation $\overline{\rho} : G \to \mathrm{GL}_n (\mathbb{F}_p)$ of the absolute Galois group $G=G_{\mathbb{Q}}$ of $\mathbb{Q}$, a <em>deformation</em> of $\overline{\rho}$ is just a lift $\rho_R : G_{\mathbb{Q}} \to \mathrm{GL}_n(R)$ through some quotient $R \to \mathbb{F}_p$ (or, to be precise, it is an equivalence class of lifts). Deformation theory then aims to classify all of the deformations $\rho_R$ of a given residual representation $\overline{\rho}$, though for technical reasons we usually only look at deformations valued over commutative, complete, Noetherian local rings with residue field $\mathbb{F}_p$ (we call these rings <em>coefficient rings</em>). The prototypical theorem of Galois deformation theory is as follows:
+				</p>
+				<p class="centred-and-padded">
+					<b>Theorem.</b> <em>If $\mathrm{End}_G (\overline\rho) = \mathbb{F}_p$, then there is a coefficient ring $\mathcal{R}^\text{u}$ and a deformation $\boldsymbol{\rho}^\text{u} : G \to \mathrm{GL}_n(\mathcal{R}^\text{u})$ such that every deformation $\rho : G \to \mathrm{GL}_n(R)$ is uniquely of the form $\rho = \varphi \circ \boldsymbol\rho^\text{u}$, where $\varphi : \mathcal{R}^\text{u} \to R$ is a continuous local homomorphism. We call $\boldsymbol\rho^\text{u}$ a universal deformation, and $\mathcal{R}^\text{u}$ a universal deformation ring.</em>
+				</p>
+				<p>
+					As you may imagine, knowing that all deformations all come from one really big deformation is <em>very</em> useful, and so we may want to loosen the restriction on $\overline\rho$. It can be shown, however, that not every residual representation admits a (classical) deformation ring! To remedy this, we turn to <em>generalised matrix algebras</em>, or <em>GMAs</em>. Intuitively, a GMA $\mathcal{E}$ over a ring $R$ is something that behaves roughly like $\mathrm{GL}_n(R).$ The formal definition is in the literature (cf. [<a href="https://www.cambridge.org/core/journals/forum-of-mathematics-sigma/article/deformation-conditions-for-pseudorepresentations/B65229F043B674CF958687990143C9C4">WWE19</a>, Sec. 3.1]), but for now we will give a cursory definition of $2 \times 2$ GMAs over $R$.
+				</p>
+				<p class="centred-and-padded">
+					<b>Definition.</b> Suppose we have two $R$-modules $B,C$ and a morphism $\mu : B \otimes_R C \to R$ which is 'associative'. The <em>generalised matrix algebra</em> $\mathcal{E}$ associated to the data $(R, B, C, \mu)$ is \[ \mathcal{E} := \begin{bmatrix} R & B \\ C & R \end{bmatrix}, \] whose elements are formal matrices \[ \begin{pmatrix}r_1 & b \\ c & r_2\end{pmatrix} \in \begin{bmatrix} R & B \\ C & R \end{bmatrix} \] with $r_i \in R, b \in B,$ and $c \in C,$ and whose multiplication is given by \[ \begin{pmatrix}r_1 & b \\ c & r_2\end{pmatrix} \begin{pmatrix}r_1' & b' \\ c' & r_2'\end{pmatrix} = \begin{pmatrix}r_1 r_1' + \mu(b, c') & r_1 b' + r_2' b \\ r_1'c + r_2 c' & r_2 r_2' + \mu(b', c)\end{pmatrix}. \] We additionally define the <em>trace</em> and <em>determinant</em> functions of $\mathcal{E}$ by \[ \mathrm{tr}_{\mathcal{E}} \begin{pmatrix}r_1 & b \\ c & r_2\end{pmatrix} = r_1 + r_2, \qquad \mathrm{det}_{\mathcal{E}} \begin{pmatrix}r_1 & b \\ c & r_2\end{pmatrix} = r_1 r_2 - \mu(b, c). \]
+				</p> 
+				A GMA representation is then a (continuous) homomorphism $\rho : G \to \mathcal{E}^\times$, and we say that such $\rho$ <em>deforms</em> $\overline{\rho}$ if the character $\mathrm{det}_{\mathcal{E}} \circ \rho$ is a (classical) deformation of the character $\det \circ \overline\rho$. We then find...
+				<p class="centred-and-padded">
+					<b>Theorem.</b> <em>If $\overline\rho$ is 'multiplicity-free' (i.e. all irreducible factors of $\overline\rho$ occur with multiplicity $\leq 1$), then there exists: a coefficient ring $\mathcal{R}^\text{GMA}$; a GMA $\mathcal{E}^\text{u}$ over $\mathcal{R}^\text{GMA}$; and a GMA deformation $\boldsymbol\rho^\text{GMA} : G \to (\mathcal{E}^\text{u})^\times$ of $\overline\rho$ such that every $GMA$ deformation $\rho : G \to E^\times$ of $\overline\rho$ factors through $\boldsymbol\rho^\text{GMA}$. In particular, if $\mathrm{End}_G(\overline\rho) = \mathbb{F}_p$ then $\boldsymbol\rho^\text{u}$ is such a GMA deformation.</em>
+				</p>
+				So we have a more general class of residuals which admit universal deformation rings! There is an <em>even more general</em> class of things called 'pseudorepresentations', but at this point our 'pseudodeformations' are no longer necessarily homomorphisms! GMA deformation theory then sits as a perfect compromise: just general enough to capture all interesting examples, and still specific enough to retain a similar structure to that of the residual object.
+			</section>
+		</main>
+		<footer> <!-- footer starts here -->
+
+		</footer>
+		<script src="blah.js"></script>
+	</body>
+</html>

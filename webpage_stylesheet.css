@@ -85,6 +85,10 @@ footer {
 	display: block;
 	text-align: center;
 	font-style: italic;
+	padding-top: 2em;
+	border-width: 1px;
+	border-color: var(--grey-olive);
+	border-style: solid none none none;
 }
 
 
@@ -266,6 +270,34 @@ nav ul li:focus-within > ul {
 
 .collapsible.collapsed > :not(:first-child) {
 	display: none;
+}
+
+.topborder {
+	padding-top: 2em;
+	border-width: 1px;
+	border-color: var(--grey-olive);
+	border-style: solid none none none;
+}
+
+/* this stuff is all for the blog now */
+.blogpost {
+	padding: 2em;
+	border: solid;
+	border-width: 1px;
+	border-color: var(--grey-olive);
+	margin: 1em;
+}
+
+.padded {
+	padding : 2em;
+	margin: 1em;
+}
+
+.centred-and-padded {
+	padding : 1em;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /* Prevent your global `span { padding: 5em; }` rule from breaking MathJax */
